@@ -147,8 +147,8 @@ void showOptions(String enteredEmail) {
   });
 
   querySelector('#return')?.onClick.listen((MouseEvent event) {
-    outputElement.text = 'Returning to the main menu.';
-    outputElement.style.color = "white";
+    var outputHtml = '<p class="returning">Returning to the main menu</p>';
+      outputElement.innerHtml = outputHtml;
     Future.delayed(const Duration(seconds: 1), () {
       studentLogin();
     });
@@ -169,8 +169,8 @@ void displayStudentProfile(String enteredEmail) {
                        
       profile.forEach((key, value) {
         outputHtml += '<li class="table-row">'
-                      '<div class="col col-1" data-label="Attribute ">$key</div>'
-                      '<div class="col col-2" data-label="Value ">$value</div>'
+                      '<div class="col col-1" data-label="Attribute">$key</div>'
+                      '<div class="col col-2" data-label="Value">$value</div>'
                       '</li>';
       });
       outputHtml += '</ul>'
@@ -178,8 +178,9 @@ void displayStudentProfile(String enteredEmail) {
       '</div>';
       outputElement.innerHtml = outputHtml;
       querySelector('.back')?.onClick.listen((MouseEvent event) {
-        outputElement.text = "Returning to the main menu.";
-        outputElement.style.color = "Black";
+        //outputElement.text = "Returning to the main menu.";
+        outputHtml = '<p class = "returning">Returning to the main menu</p>';
+        outputElement.innerHtml = outputHtml;
          Future.delayed(const Duration(seconds: 1), () {
       showOptions(enteredEmail);
     });
@@ -201,8 +202,8 @@ void displayStudentAssignment(String enteredEmail) {
     }
   }
   querySelector('.back')?.onClick.listen((MouseEvent event) {
-    outputElement.text = "Returning to the main menu.";
-    outputElement.style.color = "white";
+    var outputHtml = '<p class="returning">Returning to the main menu</p>';
+      outputElement.innerHtml = outputHtml;
     Future.delayed(const Duration(seconds: 1), () {
       showOptions(enteredEmail);
     });
@@ -213,7 +214,7 @@ void displayStudentResult(String enteredEmail) {
   var outputElement = querySelector('#output')!;
   for (var profile in studentprofile) {
     if (profile['Student Email'] == enteredEmail) {
-      var outputHtml = '<p>Result: ${profile['Student Result']}'; 
+      var outputHtml = '<p class ="returning">Result: ${profile['Student Result']}'; 
   outputHtml += '</p>';
   outputHtml += '<button class="back">Back</button>';
       outputElement.innerHtml = outputHtml;
@@ -221,8 +222,8 @@ void displayStudentResult(String enteredEmail) {
     }
   }
   querySelector('.back')?.onClick.listen((MouseEvent event) {
-        outputElement.text = "Returning to the main menu.";
-        outputElement.style.color = "white";
+    var outputHtml = '<p class="returning">Returning to the main menu</p>';
+    outputElement.innerHtml = outputHtml;
          Future.delayed(const Duration(seconds: 1), () {
       showOptions(enteredEmail);
     });
