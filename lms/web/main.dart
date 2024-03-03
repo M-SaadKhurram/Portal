@@ -169,8 +169,8 @@ void displayStudentProfile(String enteredEmail) {
                        
       profile.forEach((key, value) {
         outputHtml += '<li class="table-row">'
-                      '<div class="col col-1" data-label="Attribute s">$key</div>'
-                      '<div class="col col-2" data-label="Value s">$value</div>'
+                      '<div class="col col-1" data-label="Attribute ">$key</div>'
+                      '<div class="col col-2" data-label="Value ">$value</div>'
                       '</li>';
       });
       outputHtml += '</ul>'
@@ -179,7 +179,7 @@ void displayStudentProfile(String enteredEmail) {
       outputElement.innerHtml = outputHtml;
       querySelector('.back')?.onClick.listen((MouseEvent event) {
         outputElement.text = "Returning to the main menu.";
-        outputElement.style.color = "white";
+        outputElement.style.color = "Black";
          Future.delayed(const Duration(seconds: 1), () {
       showOptions(enteredEmail);
     });
